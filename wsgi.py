@@ -1,5 +1,10 @@
 from flask import Flask
 application = Flask(__name__)
+from time import time
+from pathlib import Path
+from dotenv import load_dotenv
+import os
+load_dotenv(dotenv_path=Path('/configs/.env'))
 
 @application.route('/upload', methods=['POST'])
 def upload():
