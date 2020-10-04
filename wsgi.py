@@ -22,4 +22,4 @@ def test():
     return 'Hello', 200
 
 if __name__ == "__main__":
-    application.run()
+    app.run()
