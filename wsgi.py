@@ -1,7 +1,7 @@
 from flask import Flask
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route('/upload', methods=['POST'])
+@application.route('/upload', methods=['POST'])
 def upload():
     print('Got request')
     CODE = os.getenv('CODE')
@@ -17,9 +17,9 @@ def upload():
     print(f'Request not matching code: received: {CODE} set: {code}')
     return '', 401
 
-@app.route('/test', methods=['GET', 'POST'])
+@application.route('/test', methods=['GET', 'POST'])
 def test():
     return 'Hello', 200
 
 if __name__ == "__main__":
-    app.run()
+    application.run()
